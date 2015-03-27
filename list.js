@@ -44,12 +44,12 @@ var List = function() {
   // Return the number of elements in the list.
   this.length = function() {
   
-    var itm =this.item;
+    var item =this.item;
     var count =0;
-    if(itm == null){return 0;}
-    while(itm != null){
-        count++;
-        itm = itm.tail;
+    if(item == null){return 0;}
+    
+    for(item ;item!=null;item=item.tail){
+      count++
     }
 
     return count;
@@ -58,8 +58,14 @@ var List = function() {
   // Return the last data item in the list if it exists. If
   // not, return null
   this.last = function() {
-    // ......
-    return null
+
+    var item =this.item;
+    if(item == null){return null};
+    for( item ; item.tail != null ; item = item.tail)
+    {
+      continue;
+    }
+    return item.data;
   }
 }
 
